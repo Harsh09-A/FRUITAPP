@@ -1,0 +1,74 @@
+{% extends 'common/base.html' %}
+{% load static %}
+{% block content %}
+<div class="breadcrumb-wrap" id="bread-crum">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Contact</li>
+        </ul>
+    </div>
+</div>
+
+<div class="contact">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-7">
+                <h2>Get In Touch</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    In laudantium optio quasi reiciendis ullam repellat est voluptatibus reprehenderit impedit doloremque
+                     facilis totam vitae similique quas accusamus obcaecati cumque, asperiores sint?</p>
+                <div class="form">
+                    <form id="contactid" action="/query/" method="post">
+                        {% csrf_token %}
+                        <div class="form-row contactdiv">
+                            <div class="col-lg-6">
+                                <input type="text" name="qname" class="form-control" placeholder="Your Name" />
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="email" name="qemail" class="form-control" placeholder="Your Email" />
+                            </div>
+                        </div>
+                        <div class="form-row contactdiv">
+                            <div class="col-lg-6">
+                                <input type="text" name="qphone" class="form-control" placeholder="Your Phone" />
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="text" name="qcity" class="form-control" placeholder="Your City" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="qsubject" class="form-control" placeholder="Subject" />
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="qmessage" rows="5" placeholder="Message"></textarea>
+                        </div>
+                        <p id="response"></p>
+                        <div><input type="submit" name="submit" id="submit" value="Send Message" /></div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="contact-info">
+                    <div class="section-header">
+                        <h3>Get in Touch</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum quam ac mi viverra dictum. In efficitur ipsum diam, at dignissim lorem tempor in. Vivamus tempor hendrerit finibus.
+                        </p>
+                    </div>
+                    <h4><i class="fa fa-map-marker"></i>123 E Shop, Los Angeles, CA, USA</h4>
+                    <h4><i class="fa fa-envelope"></i>email@example.com</h4>
+                    <h4><i class="fa fa-phone"></i>+123-456-7890</h4>
+                    <div class="social">
+                        <a href=""><i class="fa fa-twitter"></i></a>
+                        <a href=""><i class="fa fa-facebook"></i></a>
+                        <a href=""><i class="fa fa-linkedin"></i></a>
+                        <a href=""><i class="fa fa-instagram"></i></a>
+                        <a href=""><i class="fa fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
